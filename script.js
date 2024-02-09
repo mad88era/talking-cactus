@@ -9,21 +9,21 @@ const createWeatherCard = (cityName, weatherItem, index) => {
   if(index === 0) { // HTML for weather card
       return `<div class="details">
                     <h2>${cityName} (${weatherItem.dt_txt.split(" ")[0]})</h2>
-                    <h4>Temperature: ${(weatherItem.main.temp -273.15).toFixed(2)}°F</h4>
+                    <h4>Temperature: ${(weatherItem.main.temp * 9/5 - 459.67).toFixed(2)}°F</h4>
                     <h4>Wind: ${weatherItem.wind.speed} M/S</h4>
-                    <h4>Humidity: ${weatherItem.wind.humidity}%</h4> 
+                    <h4>Humidity: ${weatherItem.main.humidity}%</h4> 
                </div>   
                <div class="icon">
                     <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@4x.png" alt="weather-icon">
                     <h4>${weatherItem.weather[0].description}</h4>
                </div>`;
   } else { //HTML for other five days
-    return ` <li class="card">
+       return ` <li class="card">
                    <h3>(${weatherItem.dt_txt.split(" ")[0]})</h3>
                    <img src="https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png" alt="weather-icon">
-                   <h4>Temp: ${(weatherItem.main.temp -273.15).toFixed(2)}°F</h4>
+                   <h4>Temp: ${(weatherItem.main.temp * 9/5 - 459.67).toFixed(2)}°F</h4>
                    <h4>Wind: ${weatherItem.wind.speed} M/S</h4>
-                   <h4>Humidity: ${weatherItem.wind.humidity}%</h4> 
+                   <h4>Humidity: ${weatherItem.main.humidity}%</h4> 
              </li>`;
   }
 }
