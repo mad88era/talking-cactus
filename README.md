@@ -22,5 +22,5 @@ https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys
 https://openweathermap.org/forecast5
 
 ## ScreenShot:
-![Atl text](DISPLAY.png)
+![Atl text](weathershot.png)
 
